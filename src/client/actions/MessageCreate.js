@@ -32,7 +32,6 @@ class MessageCreateAction extends Action {
       client.emit(Events.MESSAGE_CREATE, message);
       return { message };
     } } catch(e) {
-      console.log("ignoring error")
     }
 
     return {};
