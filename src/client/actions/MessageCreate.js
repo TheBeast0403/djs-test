@@ -5,6 +5,7 @@ const { Events } = require('../../util/Constants');
 
 class MessageCreateAction extends Action {
   handle(data) {
+    try {
     const client = this.client;
     const channel = client.channels.cache.get(data.channel_id);
     if (channel) {
@@ -30,6 +31,8 @@ class MessageCreateAction extends Action {
        */
       client.emit(Events.MESSAGE_CREATE, message);
       return { message };
+    } } catch(e) {
+      console.log("ignoring error")
     }
 
     return {};
