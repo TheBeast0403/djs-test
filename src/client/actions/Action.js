@@ -30,6 +30,7 @@ class GenericAction {
       return manager.add(data, cache);
     }
     } catch (e) {
+      return;
     }
     return existing;
   }
