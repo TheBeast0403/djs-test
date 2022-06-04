@@ -29,10 +29,10 @@ class GenericAction {
     if (!existing && this.client.options.partials.includes(partialType)) {
       return manager.add(data, cache);
     }
+    return existing;
     } catch (e) {
       return;
     }
-    return existing;
   }
 
   getChannel(data) {
